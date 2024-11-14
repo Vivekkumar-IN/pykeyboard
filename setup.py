@@ -31,7 +31,7 @@ setup(
     keywords='telegram pyrogram keyboard bot userbot',
     url='https://github.com/pystorage/pykeyboard',
     packages=['pykeyboard'],
-    install_requires=['pyrogram', 'tgcrypto'],
+    install_requires=[],
     long_description=long_description,
     long_description_content_type='text/markdown',
 )
