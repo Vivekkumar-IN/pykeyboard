@@ -1,5 +1,10 @@
 from pyrogram.types import (
-    ReplyKeyboardMarkup, KeyboardButton, ReplyKeyboardRemove, ForceReply)
+    ReplyKeyboardMarkup,
+    KeyboardButton,
+    ReplyKeyboardRemove,
+    ForceReply
+)
+
 
 
 class ReplyKeyboard(ReplyKeyboardMarkup):
@@ -14,13 +19,12 @@ class ReplyKeyboard(ReplyKeyboardMarkup):
             placeholder=placeholder
         )
         self.row_width = row_width
-
+
     def add(self, *args):
         self.keyboard = [
             args[i:i + self.row_width]
             for i in range(0, len(args), self.row_width)
-        ]
-
+        ]
     def row(self, *args):
         self.keyboard.append([button for button in args])
 

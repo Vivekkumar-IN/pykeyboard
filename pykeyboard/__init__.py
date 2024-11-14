@@ -5,6 +5,6 @@ __license__ = 'MIT License'
 __copyright__ = 'Copyright 2020-2022 PyMaster'
 
 from .inline_keyboard import InlineKeyboard, InlineButton
-from .inline_pagination_keyboard import InlinePaginationKeyboard, InlineButton
+from .inline_pagination_keyboard import InlinePaginationKeyboard
 from .reply_keyboard import (
     ReplyKeyboard, ReplyButton, ReplyKeyboardRemove, ForceReply)

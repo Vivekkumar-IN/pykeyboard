@@ -1,6 +1,5 @@
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
-
 class InlinePaginationKeyboard(InlineKeyboardMarkup):
     SYMBOL_FIRST_PAGE = '« {}'
     SYMBOL_PREVIOUS_PAGE = '‹ {}'
@@ -8,8 +7,7 @@ class InlinePaginationKeyboard(InlineKeyboardMarkup):
     SYMBOL_NEXT_PAGE = '{} ›'
     SYMBOL_LAST_PAGE = '{} »'
 
-    def __init__(self, count_pages: int, current_page: int,
-                 callback_pattern: str):
+    def __init__(self, count_pages: int, current_page: int, callback_pattern: str):
         self.inline_keyboard = list()
         super().__init__(inline_keyboard=self.inline_keyboard)
         self.count_pages = count_pages
@@ -99,19 +97,3 @@ class InlinePaginationKeyboard(InlineKeyboardMarkup):
     @property
     def markup(self):
         self.inline_keyboard.append(self.build_pagination)
-
-
-class InlineButton(InlineKeyboardButton):
-    def __init__(self, text=None, callback_data=None, url=None,
-                 login_url=None, user_id=None, switch_inline_query=None,
-                 switch_inline_query_current_chat=None, callback_game=None):
-        super().__init__(
-            text=text,
-            callback_data=callback_data,
-            url=url,
-            login_url=login_url,
-            user_id=user_id,
-            switch_inline_query=switch_inline_query,
-            switch_inline_query_current_chat=switch_inline_query_current_chat,
-            callback_game=callback_game
-        )
