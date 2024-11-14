@@ -177,7 +177,7 @@ from pykeyboard import InlineKeyboard, InlineButton
 
 keyboard = InlineKeyboard()
 keyboard.paginate(150, 123, 'pagination_keyboard:{number}')
-await keyboard.row(
+keyboard.row(
     InlineButton('Back', 'pagination_keyboard:back'),
     InlineButton('Close', 'pagination_keyboard:close')
 )
@@ -232,7 +232,7 @@ from pykeyboard import ReplyKeyboard, ReplyButton
 
 keyboard = ReplyKeyboard()
 keyboard.row(ReplyButton('Reply button 1'))
-await keyboard.row(
+keyboard.row(
     ReplyButton('Reply button 2'),
     ReplyButton('Reply button 3')
 )
