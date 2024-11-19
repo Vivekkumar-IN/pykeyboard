@@ -32,7 +32,7 @@
 # Installation
 
 ```shell
-pip install git+https://github.com/Vivekkumar-IN/pykeyboard
+pip install pykeyboard
 ```
 
 # Documentation
