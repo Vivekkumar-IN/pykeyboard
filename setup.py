@@ -7,9 +7,9 @@ with open(path.join(this_directory, "README.md"), encoding="utf-8") as f:
     long_description = f.read()
 
 setup(
-    name="pykeyboard",
+    name="pykeyboard2",
     version="0.1.5",
-    author="PyMaster",
+    author="Vivekkumar-in",
     author_email="",
     description="Best Keyboard and Pagination for the Pyrogram Library.",
     license="MIT",
@@ -17,6 +17,8 @@ setup(
         "Programming Language :: Python",
         "Programming Language :: Python :: 3.9",
         "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.11",
+        "Programming Language :: Python :: 3.12",
         "Topic :: Internet",
         "Topic :: Communications",
         "Topic :: Communications :: Chat",
@@ -24,7 +26,7 @@ setup(
         "Topic :: Software Development :: Libraries :: Python Modules",
     ],
     keywords="telegram pyrogram keyboard bot userbot",
-    url="https://github.com/pystorage/pykeyboard",
+    url="https://github.com/Vivekkumar-in/pykeyboard",
     packages=["pykeyboard"],
     install_requires=[],
     long_description=long_description,
