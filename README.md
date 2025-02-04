@@ -1,7 +1,6 @@
 # Pykeyboard
 
-- [<b>Installation</b>](#installation)
-- [<b>Documentation</b>](#documentation)
+- [<b>Installation</b>](#installation)
   - [<b>Inline Keyboard</b>](#inline-keyboard)
     - [Inline Keyboard add buttons](#inline-keyboard-add-buttons)
     - [Inline Keyboard row buttons](#inline-keyboard-row-buttons)
