@@ -16,7 +16,7 @@
 # Pykeyboard
 
 - [<b>Installation</b>](#installation)
-- [<b>Pyrogram Usasge</b>(#usasge-with-pyrogram)
+- [<b>Pyrogram Usasge</b>](#usasge-with-pyrogram)
   - [<b>Inline Keyboard</b>](#inline-keyboard)
     - [Inline Keyboard add buttons](#inline-keyboard-add-buttons)
     - [Inline Keyboard row buttons](#inline-keyboard-row-buttons)
