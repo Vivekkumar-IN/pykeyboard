@@ -7,8 +7,10 @@ except ImportError:
 class InlineKeyboard:
     def __init__(self, row_width=3):
         if Button is None:
-            raise ImportError("Telethon module is not installed. Please install it using 'pip install telethon'")
-        
+            raise ImportError(
+                "Telethon module is not installed. Please install it using 'pip install telethon'"
+            )
+
         self.row_width = row_width
         self.inline_keyboard = []
 
@@ -17,7 +19,7 @@ class InlineKeyboard:
 
     def add(self, *args):
         self.inline_keyboard.extend(
-            [args[i:i + self.row_width] for i in range(0, len(args), self.row_width)]
+            [args[i : i + self.row_width] for i in range(0, len(args), self.row_width)]
         )
 
     def row(self, *args):
