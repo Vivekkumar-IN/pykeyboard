@@ -33,9 +33,9 @@
 
 
 - [<b>Telethon Usasge</b>](#telethon-usasge)
-  - [<b>Inline Keyboard</b>](#inline-keyboard)
-    - [Inline Keyboard add buttons](#inline-keyboard-add-buttons)
-    - [Inline Keyboard row buttons](#inline-keyboard-row-buttons)
+  - [<b>Inline Keyboard</b>](#telethon-inline-keyboard)
+    - [Inline Keyboard add buttons](#telethon-inline-keyboard-add-buttons)
+    - [Inline Keyboard row buttons](#telethon-inline-keyboard-row-buttons)
 
 # Installation
 
@@ -265,7 +265,7 @@ keyboard.row(KeyboardButton('Reply button 5'))
 
 # Telethon Usasge
 
-## Inline Keyboard
+## Telethon Inline Keyboard
 
 ```python
 from pykeyboard.telethon import InlineKeyboard
@@ -275,7 +275,7 @@ from pykeyboard.telethon import InlineKeyboard
 
 - row_width (integer, default 3)
 
-### Inline Keyboard add buttons
+### Telethon Inline Keyboard add buttons
 
 #### Code
 
@@ -303,7 +303,7 @@ keyboard.add(
 
 <p><img src="https://raw.githubusercontent.com/pystorage/pykeyboard/master/docs/source/images/add_inline_button.png" alt="add_inline_button"></p>
 
-### Inline Keyboard row buttons
+### Telethon Inline Keyboard row buttons
 
 #### Code
 
