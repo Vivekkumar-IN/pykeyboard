@@ -16,6 +16,7 @@
 # Pykeyboard
 
 - [<b>Installation</b>](#installation)
+
 - [<b>Pyrogram Usasge</b>](#usasge-with-pyrogram)
   - [<b>Inline Keyboard</b>](#inline-keyboard)
     - [Inline Keyboard add buttons](#inline-keyboard-add-buttons)
@@ -29,6 +30,12 @@
   - [<b>Reply Keyboard</b>](#reply-keyboard)
     - [Reply Keyboard add buttons](#reply-keyboard-add-buttons)
     - [Reply Keyboard row buttons](#reply-keyboard-row-buttons)
+
+
+- [<b>Telethon Usasge</b>](#telethon-usasge)
+  - [<b>Inline Keyboard</b>](#inline-keyboard)
+    - [Inline Keyboard add buttons](#inline-keyboard-add-buttons)
+    - [Inline Keyboard row buttons](#inline-keyboard-row-buttons)
 
 # Installation
 
@@ -254,3 +261,71 @@ keyboard.row(KeyboardButton('Reply button 5'))
 #### Result
 
 <p><img src="https://raw.githubusercontent.com/pystorage/pykeyboard/master/docs/source/images/row_reply_button.png" alt="row_reply_button"></p>
+
+
+# Telethon Usasge
+
+## Inline Keyboard
+
+```python
+from pykeyboard.telethon import InlineKeyboard
+```
+
+##### Parameters:
+
+- row_width (integer, default 3)
+
+### Inline Keyboard add buttons
+
+#### Code
+
+```python
+from telethon import Button
+
+from pykeyboard import InlineKeyboard
+
+
+keyboard = InlineKeyboard(row_width=3)
+keyboard.add(
+    Button.inline('1', 'inline_keyboard:1'),
+    Button.inline('2', 'inline_keyboard:2'),
+    Button.inline('3', 'inline_keyboard:3'),
+    Button.inline('4', 'inline_keyboard:4'),
+    Button.inline('5', 'inline_keyboard:5'),
+    Button.inline('6', 'inline_keyboard:6'),
+    Button.inline('7', 'inline_keyboard:7')
+)
+
+# Like this you can pass any type of Inline button ex:- Button.inline, Button.url, etc also you can pass any constructors of KeyboardButton
+```
+
+#### Result
+
+<p><img src="https://raw.githubusercontent.com/pystorage/pykeyboard/master/docs/source/images/add_inline_button.png" alt="add_inline_button"></p>
+
+### Inline Keyboard row buttons
+
+#### Code
+
+```python
+from telethon import Button
+
+from pykeyboard import InlineKeyboard
+
+
+keyboard = InlineKeyboard()
+keyboard.row(Button.inline('1', 'inline_keyboard:1'))
+keyboard.row(
+    Button.inline('2', 'inline_keyboard:2'),
+    Button.inline('3', 'inline_keyboard:3'),
+)
+keyboard.row(Button.inline('4', 'inline_keyboard:4'))
+keyboard.row(
+    Button.inline('5', 'inline_keyboard:5'),
+    Button.inline('6', 'inline_keyboard:6')
+)
+```
+
+#### Result
+
+<p><img src="https://raw.githubusercontent.com/pystorage/pykeyboard/master/docs/source/images/row_inline_button.png" alt="row_inline_button"></p>
