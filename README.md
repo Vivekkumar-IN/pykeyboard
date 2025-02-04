@@ -53,18 +53,20 @@ from pykeyboard import InlineKeyboard
 #### Code
 
 ```python
-from pykeyboard import InlineKeyboard, InlineButton
+from pyrogram.types import InlineKeyboardButton
+
+from pykeyboard import InlineKeyboard
 
 
 keyboard = InlineKeyboard(row_width=3)
 keyboard.add(
-    InlineButton('1', 'inline_keyboard:1'),
-    InlineButton('2', 'inline_keyboard:2'),
-    InlineButton('3', 'inline_keyboard:3'),
-    InlineButton('4', 'inline_keyboard:4'),
-    InlineButton('5', 'inline_keyboard:5'),
-    InlineButton('6', 'inline_keyboard:6'),
-    InlineButton('7', 'inline_keyboard:7')
+    InlineKeyboardButton('1', 'inline_keyboard:1'),
+    InlineKeyboardButton('2', 'inline_keyboard:2'),
+    InlineKeyboardButton('3', 'inline_keyboard:3'),
+    InlineKeyboardButton('4', 'inline_keyboard:4'),
+    InlineKeyboardButton('5', 'inline_keyboard:5'),
+    InlineKeyboardButton('6', 'inline_keyboard:6'),
+    InlineKeyboardButton('7', 'inline_keyboard:7')
 )
 ```
 
@@ -77,19 +79,21 @@ keyboard.add(
 #### Code
 
 ```python
-from pykeyboard import InlineKeyboard, InlineButton
+from pyrogram.types import InlineKeyboardButton
+
+from pykeyboard import InlineKeyboard
 
 
 keyboard = InlineKeyboard()
-keyboard.row(InlineButton('1', 'inline_keyboard:1'))
+keyboard.row(InlineKeyboardButton('1', 'inline_keyboard:1'))
 keyboard.row(
-    InlineButton('2', 'inline_keyboard:2'),
-    InlineButton('3', 'inline_keyboard:3')
+    InlineKeyboardButton('2', 'inline_keyboard:2'),
+    InlineKeyboardButton('3', 'inline_keyboard:3'),
 )
-keyboard.row(InlineButton('4', 'inline_keyboard:4'))
+keyboard.row(InlineKeyboardButton('4', 'inline_keyboard:4'))
 keyboard.row(
-    InlineButton('5', 'inline_keyboard:5'),
-    InlineButton('6', 'inline_keyboard:6')
+    InlineKeyboardButton('5', 'inline_keyboard:5'),
+    InlineKeyboardButton('6', 'inline_keyboard:6')
 )
 ```
 
@@ -117,7 +121,7 @@ from pykeyboard import InlineKeyboard
 from pykeyboard import InlineKeyboard
 
 keyboard = InlineKeyboard()
-keyboard.paginate(3, 3, 'pagination_keyboard:{number}')
+keyboard.paginate(3, 3, 'paboard:{number}')
 ```
 
 #### Result
@@ -174,13 +178,15 @@ keyboard.paginate(100, 100, 'pagination_keyboard:{number}')
 #### Code
 
 ```python
-from pykeyboard import InlineKeyboard, InlineButton
+from pyrogram.types import InlineKeyboardButton
+
+from pykeyboard import InlineKeyboard
 
 keyboard = InlineKeyboard()
 keyboard.paginate(150, 123, 'pagination_keyboard:{number}')
 keyboard.row(
-    InlineButton('Back', 'pagination_keyboard:back'),
-    InlineButton('Close', 'pagination_keyboard:close')
+    InlineKeyboardButton('Back', 'pagination_keyboard:back'),
+    InlineKeyboardButton('Close', 'pagination_keyboard:close')
 )
 ```
 
@@ -206,16 +212,18 @@ from pykeyboard import ReplyKeyboard
 #### Code
 
 ```python
-from pykeyboard import ReplyKeyboard, ReplyButton
+from pyrogram.types import KeyboardButton
+
+from pykeyboard import ReplyKeyboard
 
 
 keyboard = ReplyKeyboard(row_width=3)
 keyboard.add(
-    ReplyButton('Reply button 1'),
-    ReplyButton('Reply button 2'),
-    ReplyButton('Reply button 3'),
-    ReplyButton('Reply button 4'),
-    ReplyButton('Reply button 5')
+    KeyboardButton('Reply button 1'),
+    KeyboardButton('Reply button 2'),
+    KeyboardButton('Reply button 3'),
+    KeyboardButton('Reply button 4'),
+    KeyboardButton('Reply button 5')
 )
 ```
 
@@ -228,17 +236,19 @@ keyboard.add(
 #### Code
 
 ```python
-from pykeyboard import ReplyKeyboard, ReplyButton
+from pyrogram.types import KeyboardButton
+
+from pykeyboard import ReplyKeyboard
 
 
 keyboard = ReplyKeyboard()
-keyboard.row(ReplyButton('Reply button 1'))
+keyboard.row(KeyboardButton('Reply button 1'))
 keyboard.row(
-    ReplyButton('Reply button 2'),
-    ReplyButton('Reply button 3')
+    KeyboardButton('Reply button 2'),
+    KeyboardButton('Reply button 3')
 )
-keyboard.row(ReplyButton('Reply button 4'))
-keyboard.row(ReplyButton('Reply button 5'))
+keyboard.row(KeyboardButton('Reply button 4'))
+keyboard.row(KeyboardButton('Reply button 5'))
 ```
 
 #### Result
