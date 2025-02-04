@@ -1,3 +1,5 @@
+# For better experience please Checkout the [Original Repo](https://github.com/pystorage/pykeyboard)
+
 <div align="center">
 <p align="center">
 <img src="https://raw.githubusercontent.com/pystorage/pykeyboard/master/docs/source/images/logo.png" alt="pykeyboard">
@@ -13,7 +15,6 @@
 
 # Pykeyboard
 
-- [<b>What's new?</b>](#whats-new)
 - [<b>Installation</b>](#installation)
 - [<b>Documentation</b>](#documentation)
   - [<b>Inline Keyboard</b>](#inline-keyboard)
