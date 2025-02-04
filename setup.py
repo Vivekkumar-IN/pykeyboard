@@ -14,7 +14,7 @@ setup(
     description="Best Keyboard and Pagination for the Pyrogram Library.",
     license="MIT",
     classifiers=[
-        "Programming Language :: Python",
+        "Programming Language :: Python",
         "Programming Language :: Python :: 3.9",
         "Programming Language :: Python :: 3.10",
         "Topic :: Internet",
