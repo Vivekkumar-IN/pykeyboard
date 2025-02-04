@@ -33,7 +33,7 @@
 # Installation
 
 ```shell
-pip install pykeyboard
+pip install pykeyboard2
 ```
 
 # Documentation
