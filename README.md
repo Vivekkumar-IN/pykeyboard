@@ -1,18 +1,3 @@
-# For better experience please Checkout the [Original Repo](https://github.com/pystorage/pykeyboard)
-
-<div align="center">
-<p align="center">
-<img src="https://raw.githubusercontent.com/pystorage/pykeyboard/master/docs/source/images/logo.png" alt="pykeyboard">
-</p>
-
-![PyPI](https://img.shields.io/pypi/v/pykeyboard)
-[![Downloads](https://pepy.tech/badge/pykeyboard)](https://pepy.tech/project/pykeyboard)
-![GitHub](https://img.shields.io/github/license/pystorage/pykeyboard)
-
- <p><h2>🎉 Thank you for 1M downloads 🎉 I love you...🥰</h2></p>
-
-</div>
-
 # Pykeyboard
 
 - [<b>Installation</b>](#installation)
@@ -254,3 +239,8 @@ keyboard.row(KeyboardButton('Reply button 5'))
 #### Result
 
 <p><img src="https://raw.githubusercontent.com/pystorage/pykeyboard/master/docs/source/images/row_reply_button.png" alt="row_reply_button"></p>
+
+
+
+
+# A fork of [pykeyboard](https://github.com/pystorage/pykeyboard)
