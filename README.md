@@ -16,19 +16,20 @@
 # Pykeyboard
 
 - [<b>Installation</b>](#installation)
-- [<b>Documentation</b>](#documentation)
-  - [<b>Inline Keyboard</b>](#inline-keyboard)
-    - [Inline Keyboard add buttons](#inline-keyboard-add-buttons)
-    - [Inline Keyboard row buttons](#inline-keyboard-row-buttons)
-    - [<b>Pagination inline keyboard</b>](#pagination-inline-keyboard)
-      - [Pagination 3 pages](#pagination-3-pages)
-      - [Pagination 5 pages](#pagination-5-pages)
-      - [Pagination 9 pages](#pagination-9-pages)
-      - [Pagination 100 pages](#pagination-100-pages)
-      - [Pagination 150 pages and buttons](#pagination-150-pages-and-buttons)
-  - [<b>Reply Keyboard</b>](#reply-keyboard)
-    - [Reply Keyboard add buttons](#reply-keyboard-add-buttons)
-    - [Reply Keyboard row buttons](#reply-keyboard-row-buttons)
+- Pyrogram
+  - [<b>Documentation</b>](#documentation)
+    - [<b>Inline Keyboard</b>](#inline-keyboard)
+      - [Inline Keyboard add buttons](#inline-keyboard-add-buttons)
+      - [Inline Keyboard row buttons](#inline-keyboard-row-buttons)
+      - [<b>Pagination inline keyboard</b>](#pagination-inline-keyboard)
+        - [Pagination 3 pages](#pagination-3-pages)
+        - [Pagination 5 pages](#pagination-5-pages)
+        - [Pagination 9 pages](#pagination-9-pages)
+        - [Pagination 100 pages](#pagination-100-pages)
+        - [Pagination 150 pages and buttons](#pagination-150-pages-and-buttons)
+    - [<b>Reply Keyboard</b>](#reply-keyboard)
+      - [Reply Keyboard add buttons](#reply-keyboard-add-buttons)
+      - [Reply Keyboard row buttons](#reply-keyboard-row-buttons)
 
 # Installation
 
