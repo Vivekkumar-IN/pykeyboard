@@ -1,9 +1,4 @@
-from pyrogram.types import (
-    ForceReply,
-    KeyboardButton,
-    ReplyKeyboardMarkup,
-    ReplyKeyboardRemove,
-)
+from pyrogram.types import ReplyKeyboardMarkup
 
 
 class ReplyKeyboard(ReplyKeyboardMarkup):
