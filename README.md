@@ -1,6 +1,7 @@
 # Pykeyboard
 
-- [<b>Installation</b>](#installation)
+- [<b>Installation</b>](#installation)
+
   - [<b>Inline Keyboard</b>](#inline-keyboard)
     - [Inline Keyboard add buttons](#inline-keyboard-add-buttons)
     - [Inline Keyboard row buttons](#inline-keyboard-row-buttons)
@@ -44,13 +45,13 @@ from pykeyboard import InlineKeyboard
 
 keyboard = InlineKeyboard(row_width=3)
 keyboard.add(
-    InlineKeyboardButton('1', 'inline_keyboard:1'),
-    InlineKeyboardButton('2', 'inline_keyboard:2'),
-    InlineKeyboardButton('3', 'inline_keyboard:3'),
-    InlineKeyboardButton('4', 'inline_keyboard:4'),
-    InlineKeyboardButton('5', 'inline_keyboard:5'),
-    InlineKeyboardButton('6', 'inline_keyboard:6'),
-    InlineKeyboardButton('7', 'inline_keyboard:7')
+    InlineKeyboardButton('1', 'button_callback:1'),
+    InlineKeyboardButton('2', 'button_callback:2'),
+    InlineKeyboardButton('3', 'button_callback:3'),
+    InlineKeyboardButton('4', 'button_callback:4'),
+    InlineKeyboardButton('5', 'button_callback:5'),
+    InlineKeyboardButton('6', 'button_callback:6'),
+    InlineKeyboardButton('7', 'button_callback:7')
 )
 ```
 
@@ -69,15 +70,15 @@ from pykeyboard import InlineKeyboard
 
 
 keyboard = InlineKeyboard()
-keyboard.row(InlineKeyboardButton('1', 'inline_keyboard:1'))
+keyboard.row(InlineKeyboardButton('1', 'button_callback:1'))
 keyboard.row(
-    InlineKeyboardButton('2', 'inline_keyboard:2'),
-    InlineKeyboardButton('3', 'inline_keyboard:3'),
+    InlineKeyboardButton('2', 'button_callback:2'),
+    InlineKeyboardButton('3', 'button_callback:3'),
 )
-keyboard.row(InlineKeyboardButton('4', 'inline_keyboard:4'))
+keyboard.row(InlineKeyboardButton('4', 'button_callback:4'))
 keyboard.row(
-    InlineKeyboardButton('5', 'inline_keyboard:5'),
-    InlineKeyboardButton('6', 'inline_keyboard:6')
+    InlineKeyboardButton('5', 'button_callback:5'),
+    InlineKeyboardButton('6', 'button_callback:6')
 )
 ```
 
@@ -105,7 +106,7 @@ from pykeyboard import InlineKeyboard
 from pykeyboard import InlineKeyboard
 
 keyboard = InlineKeyboard()
-keyboard.paginate(3, 3, 'paboard:{number}')
+keyboard.paginate(3, 3, 'callback_pattern:{number}')
 ```
 
 #### Result
@@ -120,7 +121,7 @@ keyboard.paginate(3, 3, 'paboard:{number}')
 from pykeyboard import InlineKeyboard
 
 keyboard = InlineKeyboard()
-keyboard.paginate(5, 3, 'pagination_keyboard:{number}')
+keyboard.paginate(5, 3, 'callback_pattern:{number}')
 ```
 
 #### Result
@@ -135,7 +136,7 @@ keyboard.paginate(5, 3, 'pagination_keyboard:{number}')
 from pykeyboard import InlineKeyboard
 
 keyboard = InlineKeyboard()
-keyboard.paginate(9, 5, 'pagination_keyboard:{number}')
+keyboard.paginate(9, 5, 'callback_pattern:{number}')
 ```
 
 #### Result
@@ -150,7 +151,7 @@ keyboard.paginate(9, 5, 'pagination_keyboard:{number}')
 from pykeyboard import InlineKeyboard
 
 keyboard = InlineKeyboard()
-keyboard.paginate(100, 100, 'pagination_keyboard:{number}')
+keyboard.paginate(100, 100, 'callback_pattern:{number}')
 ```
 
 #### Result
@@ -167,10 +168,10 @@ from pyrogram.types import InlineKeyboardButton
 from pykeyboard import InlineKeyboard
 
 keyboard = InlineKeyboard()
-keyboard.paginate(150, 123, 'pagination_keyboard:{number}')
+keyboard.paginate(150, 123, 'callback_pattern:{number}')
 keyboard.row(
-    InlineKeyboardButton('Back', 'pagination_keyboard:back'),
-    InlineKeyboardButton('Close', 'pagination_keyboard:close')
+    InlineKeyboardButton('Back', 'callback:back'),
+    InlineKeyboardButton('Close', 'callback:close')
 )
 ```
 
