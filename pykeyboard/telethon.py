@@ -1,6 +1,6 @@
 try:
     from telethon import Button
-    from telethon.tl.types import KeyboardButtonRow, ReplyInlineMarkup
+    from telethon.tl.types import KeyboardButtonRow, ReplyInlineMarkup, KeyboardButton
 
     imported = True
 except ImportError:
@@ -56,6 +56,6 @@ class InlineKeyboard:
     def _get_button_type(self, button):
         if isinstance(button, Button):
             return "custom"
-        if isinstance(button, ADDHERERAWBUTTONBASECLASS):
+        if KeyboardButton.SUBCLASS_OF_ID == button.SUBCLASS_OF_ID:
             return "raw"
         return "unknown"
