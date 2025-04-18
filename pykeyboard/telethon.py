@@ -31,6 +31,7 @@ if ReplyInlineMarkup is not None:
                     raise ValueError(
                         f"Invalid button type: expected an inline button, got {type(btn).__name__}"
                     )
+
 else:
 
     class InlineKeyboard:
