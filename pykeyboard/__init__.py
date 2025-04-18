@@ -5,4 +5,4 @@ __license__ = "MIT License"
 __copyright__ = "Copyright 2020-2022 PyMaster"
 
 from .inline_keyboard import InlineKeyboard
-from .inline_pagination_keyboard import InlinePaginationKeyboard
+from .inline_pagination_keyboard import InlinePaginationKeyboard
