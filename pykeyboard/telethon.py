@@ -1,6 +1,10 @@
 try:
     from telethon import Button
-    from telethon.tl.types import KeyboardButtonRow, ReplyInlineMarkup, KeyboardButton
+    from telethon.tl.types import (
+        KeyboardButton,
+        KeyboardButtonRow,
+        ReplyInlineMarkup,
+    )
 
     imported = True
 except ImportError:
