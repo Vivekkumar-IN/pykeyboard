@@ -1,6 +1,6 @@
 [project]
 name = "pykeyboard2"
-version = "0.1.6"
+version = "0.2.0a1"
 authors = [
     { name = "Vivek Kumar" }
 ]
