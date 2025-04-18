@@ -14,9 +14,6 @@ class InlineKeyboard:
         self.row_width = row_width
         self.inline_keyboard = []
 
-    def get_keyboard(self):
-        return self.inline_keyboard
-
     def add(self, *args):
         self.inline_keyboard.extend(
             [args[i : i + self.row_width] for i in range(0, len(args), self.row_width)]
@@ -26,4 +23,4 @@ class InlineKeyboard:
         self.inline_keyboard.append([button for button in args])
 
     def __call__(self):
-        return self.get_keyboard()
+        return self.inline_keyboard
