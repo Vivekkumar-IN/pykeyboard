@@ -28,8 +28,9 @@ if ReplyInlineMarkup is not None:
         def _check_buttons(self, buttons):
             for btn in buttons:
                 if getattr(btn, "SUBCLASS_OF_ID", None) != 0xBAD74A3:
-                    raise TypeError("TODO")
-
+                    raise ValueError(
+                        f"Invalid button type: expected an inline button, got {type(btn).__name__}"
+                    )
 else:
 
     class InlineKeyboard:
