@@ -5,6 +5,7 @@ except ImportError:
 
 
 if ReplyInlineMarkup is not None:
+
     class InlineKeyboard(ReplyInlineMarkup):
         def __init__(self, row_width=3):
             if KeyboardButtonRow is None:
@@ -28,7 +29,9 @@ if ReplyInlineMarkup is not None:
             for btn in buttons:
                 if getattr(btn, "SUBCLASS_OF_ID", None) != 0xBAD74A3:
                     raise TypeError("TODO")
+
 else:
+
     class InlineKeyboard:
         def __init__(self, *args, **kwargs):
             raise ImportError(
