@@ -1,39 +1,27 @@
 try:
-    from telethon.tl.types import KeyboardButtonRow, ReplyInlineMarkup
-
-    imported = True
+    from telethon.tl.types import ReplyInlineMarkup, KeyboardButtonRow
 except ImportError:
-    imported = None
-
-
-class InlineKeyboard:
+    ReplyInlineMarkup = KeyboardButtonRow = None
+    
+class InlineKeyboard(ReplyInlineMarkup):
     def __init__(self, row_width=3):
-        if imported is None:
+        self.row_width = row_width
+        self.rows = []
+        if KeyboardButtonRow and ReplyInlineMarkup is None:
             raise ImportError(
                 "Telethon module is not installed. Please install it using 'pip install telethon'"
             )
-
-        self.row_width = row_width
-        self.inline_keyboard = []
-
     def add(self, *args):
         self._check_buttons(args)
-        self.inline_keyboard.extend(
-            [
-                list(args[i : i + self.row_width])
-                for i in range(0, len(args), self.row_width)
-            ]
-        )
+        for i in range(0, len(args), self.row_width):
+            row = args[i : i + self.row_width]
+            self.rows.append(KeyboardButtonRow(buttons=list(row)))
 
     def row(self, *args):
         self._check_buttons(args)
-        self.inline_keyboard.append([button for button in args])
-
-    def __call__(self):
-        rows = [KeyboardButtonRow(buttons=row) for row in self.inline_keyboard]
-        return ReplyInlineMarkup(rows=rows)
+        self.rows.append(KeyboardButtonRow(buttons=list(args)))
 
     def _check_buttons(self, buttons):
         for btn in buttons:
-            if not hasattr(btn, "SUBCLASS_OF_ID") or btn.SUBCLASS_OF_ID != 0xBAD74A3:
+            if getattr(btn, "SUBCLASS_OF_ID", None) != 0xbad74a3:
                 raise TypeError("TODO")
