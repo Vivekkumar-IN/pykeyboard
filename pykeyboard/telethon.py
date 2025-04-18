@@ -21,10 +21,7 @@ class InlineKeyboard:
     def add(self, *args):
         self._check_buttons(args)
         self.inline_keyboard.extend(
-            [
-                args[i : i + self.row_width]
-                for i in range(0, len(args), self.row_width)
-            ]
+            [args[i : i + self.row_width] for i in range(0, len(args), self.row_width)]
         )
 
     def row(self, *args):
