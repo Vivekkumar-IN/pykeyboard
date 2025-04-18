@@ -1,8 +1,9 @@
 try:
-    from telethon.tl.types import ReplyInlineMarkup, KeyboardButtonRow
+    from telethon.tl.types import KeyboardButtonRow, ReplyInlineMarkup
 except ImportError:
     ReplyInlineMarkup = KeyboardButtonRow = None
-    
+
+
 class InlineKeyboard(ReplyInlineMarkup):
     def __init__(self, row_width=3):
         self.row_width = row_width
@@ -11,6 +12,7 @@ class InlineKeyboard(ReplyInlineMarkup):
             raise ImportError(
                 "Telethon module is not installed. Please install it using 'pip install telethon'"
             )
+
     def add(self, *args):
         self._check_buttons(args)
         for i in range(0, len(args), self.row_width):
@@ -23,5 +25,5 @@ class InlineKeyboard(ReplyInlineMarkup):
 
     def _check_buttons(self, buttons):
         for btn in buttons:
-            if getattr(btn, "SUBCLASS_OF_ID", None) != 0xbad74a3:
+            if getattr(btn, "SUBCLASS_OF_ID", None) != 0xBAD74A3:
                 raise TypeError("TODO")
