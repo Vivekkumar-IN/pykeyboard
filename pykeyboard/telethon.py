@@ -1,6 +1,6 @@
 try:
-    from telethon.tl.types import KeyboardButtonRow, ReplyInlineMarkup
     from telethon import types
+    from telethon.tl.types import KeyboardButtonRow, ReplyInlineMarkup
 except ImportError:
     ReplyInlineMarkup = KeyboardButtonRow = None
 
@@ -28,18 +28,21 @@ if ReplyInlineMarkup is not None:
 
         def _check_buttons(self, buttons):
             for btn in buttons:
-                if not isinstance(btn, (
-    types.InputKeyboardButtonUrlAuth,
-    types.InputKeyboardButtonUserProfile,
-    types.KeyboardButtonBuy,
-    types.KeyboardButtonCallback,
-    types.KeyboardButtonCopy,
-    types.KeyboardButtonGame,
-    types.KeyboardButtonLoginUrl,
-    types.KeyboardButtonSwitchInline,
-    types.KeyboardButtonUrl,
-    types.KeyboardButtonWebView
-)):
+                if not isinstance(
+                    btn,
+                    (
+                        types.InputKeyboardButtonUrlAuth,
+                        types.InputKeyboardButtonUserProfile,
+                        types.KeyboardButtonBuy,
+                        types.KeyboardButtonCallback,
+                        types.KeyboardButtonCopy,
+                        types.KeyboardButtonGame,
+                        types.KeyboardButtonLoginUrl,
+                        types.KeyboardButtonSwitchInline,
+                        types.KeyboardButtonUrl,
+                        types.KeyboardButtonWebView,
+                    ),
+                ):
                     raise ValueError(
                         f"Invalid button type: expected an inline button, got {type(btn).__name__}"
                     )
