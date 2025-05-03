@@ -1,7 +1,16 @@
-from pyrogram.types import ReplyKeyboardMarkup
+try:
+    from pyrogram.types import ReplyKeyboardMarkup
+except ImportError:
+    ReplyKeyboardMarkup = None
+
+from ._helpers import require_module
 
 
-class ReplyKeyboard(ReplyKeyboardMarkup):
+@require_module(
+    ReplyKeyboardMarkup,
+    "Pyrogram is required: ReplyKeyboard depends on Pyrogram. Please install it",
+)
+class ReplyKeyboard:
     def __init__(
         self,
         resize_keyboard=None,
@@ -26,4 +35,4 @@ class ReplyKeyboard(ReplyKeyboardMarkup):
         ]
 
     def row(self, *args):
-        self.keyboard.append([button for button in args])
+        self.keyboard.append([button for button in args])

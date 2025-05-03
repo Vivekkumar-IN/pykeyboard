@@ -1,56 +1,50 @@
 try:
     from telethon import types
-    from telethon.tl.types import KeyboardButtonRow, ReplyInlineMarkup
+
+    BaseInlineMarkup = types.ReplyInlineMarkup
 except ImportError:
-    ReplyInlineMarkup = KeyboardButtonRow = None
+    types = None
+    BaseInlineMarkup = None
+
+from ._helpers import require_module
 
 
-if ReplyInlineMarkup is not None:
+@require_module(
+    BaseInlineMarkup,
+    "Telethon module is not installed. Please install it using 'pip install telethon'",
+)
+class InlineKeyboard:
+    def __init__(self, row_width=3):
+        self.row_width = row_width
+        self.rows = []
 
-    class InlineKeyboard(ReplyInlineMarkup):
-        def __init__(self, row_width=3):
-            if KeyboardButtonRow is None:
-                raise ImportError(
-                    "Telethon module is not installed. Please install it using 'pip install telethon'"
+    def add(self, *args):
+        self._check_buttons(args)
+        for i in range(0, len(args), self.row_width):
+            row = args[i : i + self.row_width]
+            self.rows.append(types.KeyboardButtonRow(buttons=list(row)))
+
+    def row(self, *args):
+        self._check_buttons(args)
+        self.rows.append(types.KeyboardButtonRow(buttons=list(args)))
+
+    def _check_buttons(self, buttons):
+        for btn in buttons:
+            if not isinstance(
+                btn,
+                (
+                    types.InputKeyboardButtonUrlAuth,
+                    types.InputKeyboardButtonUserProfile,
+                    types.KeyboardButtonBuy,
+                    types.KeyboardButtonCallback,
+                    types.KeyboardButtonCopy,
+                    types.KeyboardButtonGame,
+                    types.KeyboardButtonLoginUrl,
+                    types.KeyboardButtonSwitchInline,
+                    types.KeyboardButtonUrl,
+                    types.KeyboardButtonWebView,
+                ),
+            ):
+                raise ValueError(
+                    f"Invalid button type: expected an inline button, got {type(btn).__name__}"
                 )
-            self.row_width = row_width
-            self.rows = []
-
-        def add(self, *args):
-            self._check_buttons(args)
-            for i in range(0, len(args), self.row_width):
-                row = args[i : i + self.row_width]
-                self.rows.append(KeyboardButtonRow(buttons=list(row)))
-
-        def row(self, *args):
-            self._check_buttons(args)
-            self.rows.append(KeyboardButtonRow(buttons=list(args)))
-
-        def _check_buttons(self, buttons):
-            for btn in buttons:
-                if not isinstance(
-                    btn,
-                    (
-                        types.InputKeyboardButtonUrlAuth,
-                        types.InputKeyboardButtonUserProfile,
-                        types.KeyboardButtonBuy,
-                        types.KeyboardButtonCallback,
-                        types.KeyboardButtonCopy,
-                        types.KeyboardButtonGame,
-                        types.KeyboardButtonLoginUrl,
-                        types.KeyboardButtonSwitchInline,
-                        types.KeyboardButtonUrl,
-                        types.KeyboardButtonWebView,
-                    ),
-                ):
-                    raise ValueError(
-                        f"Invalid button type: expected an inline button, got {type(btn).__name__}"
-                    )
-
-else:
-
-    class InlineKeyboard:
-        def __init__(self, *args, **kwargs):
-            raise ImportError(
-                "Telethon module is not installed. Please install it using 'pip install telethon'"
-            )

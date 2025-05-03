@@ -23,10 +23,7 @@ jobs:
 
       - name: format codes
         run: |
-          autoflake --in-place --recursive --remove-all-unused-imports --ignore-init-module-imports .
-
-          black .
-          isort --multi-line=3 --trailing-comma .
+          autoflake -i -r --ignore-init-module-imports --remove-unused-variables --remove-duplicate-keys --remove-all-unused-imports . && black -t py39 . && isort -n --py 39 -m 3 --trailing-comma . 
 
 
       - name: Update Syntax to python3.9+

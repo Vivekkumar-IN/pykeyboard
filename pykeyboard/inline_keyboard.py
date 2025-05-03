@@ -1,7 +1,18 @@
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
+try:
+    from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
+
+except ImportError:
+    InlineKeyboardButton = None
+    InlineKeyboardMarkup = None
+
+from ._helpers import require_module
 
 
-class InlineKeyboard(InlineKeyboardMarkup):
+@require_module(
+    InlineKeyboardMarkup,
+    "Pyrogram is missing: InlinePaginationKeyboard requires Pyrogram to function.",
+)
+class InlineKeyboard:
     _SYMBOL_FIRST_PAGE = "« {}"
     _SYMBOL_PREVIOUS_PAGE = "‹ {}"
     _SYMBOL_CURRENT_PAGE = "· {} ·"
