@@ -39,7 +39,6 @@ class InlineKeyboard:
                     types.KeyboardButtonCallback,
                     types.KeyboardButtonCopy,
                     types.KeyboardButtonGame,
-                    types.KeyboardButtonLoginUrl,
                     types.KeyboardButtonSwitchInline,
                     types.KeyboardButtonUrl,
                     types.KeyboardButtonWebView,
